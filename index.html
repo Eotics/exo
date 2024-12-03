@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('moi.jpg');
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #27599b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .content-container {
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: center;
+            color: #000;
+        }
+
+        h1, h2 {
+            color: #410966;
+        }
+
+        p {
+            color: #410966;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .textarea-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .writing-area {
+            width: 100%;
+            height: 600px;
+            font-size: 16px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(39, 89, 155, 0.8);
+            resize: none;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7);
+            outline: none;
+            overflow-y: auto;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .new-window-button {
+            padding: 10px 20px;
+            background-color: #27599b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .new-window-button:hover {
+            background-color: #1e4a82;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mon Site Web</h1>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <section>
+                <h2>Bienvenue sur mon site Slasher pour vous servir !</h2>
+                <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
+                <a class="twitch-link" href="https://www.twitch.tv/seb07_93"><img src="twitch_logo.png" alt="Logo Twitch" class="logo"></a>
+                <a class="youtube-link" href="https://www.youtube.com/channel/UCKV4R0cSeqrMuVFtqid2xWA"><img src="youtube_logo.png" alt="Logo YouTube" class="logo"></a>
+                <a class="paypal-link" href="https://paypal.me/SlasherEotics?country.x=FR&locale.x=fr_FR"><img src="paypal_logo.png" alt="Logo PayPal" class="logo"></a>
+            </section>
+        </div>
+    </main>
+
+    <div class="textarea-container">
+        <textarea class="writing-area" id="writingArea" placeholder="Posez une question ici..." onkeypress="checkEnter(event)"></textarea>
+    </div>
+
+    <!-- Bouton pour ouvrir un nouvel onglet avec une page spécifique -->
+    <div class="button-container">
+        <button class="new-window-button" onclick="openNewTab()">Ouvrir un nouvel onglet</button>
+    </div>
+
+    <footer>
+        <p>&copy; Mon site web officiel Slasher Eotics</p>
+    </footer>
+
+    <script>
+        async function fetchAIResponse(question) {
+            const apiUrl = 'https://api.openai.com/v1/chat/completions'; // URL de l'API d'OpenAI
+            const apiKey = 'YOUR_API_KEY'; // Remplacez par votre clé API
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-3.5-turbo', // Modèle de l'IA à utiliser
+                        messages: [{ role: 'user', content: question }],
+                        max_tokens: 150, // Limite de tokens pour la réponse
+                        temperature: 0.7, // Niveau de créativité
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
+                }
+
+                const data = await response.json();
+                return data.choices[0].message.content; // Supposons que l'API renvoie un objet avec "choices"
+            } catch (error) {
+                console.error('Erreur lors de la récupération de la réponse:', error);
+                return "IA: Désolé, je n'ai pas pu obtenir de réponse.";
+            }
+        }
+
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Empêche le saut de ligne
+                getResponse();
+            }
+        }
+
+        async function getResponse() {
+            const userInput = document.getElementById('writingArea');
+            const chatContent = userInput.value;
+
+            // Ajouter la question à la zone de texte
+            userInput.value += `\nVous: ${chatContent}`;
+
+            const response = await fetchAIResponse(chatContent);
+            userInput.value += `\nIA: ${response}\n`;
+            userInput.scrollTop = userInput.scrollHeight; // Faire défiler vers le bas
+        }
+
+        // Fonction pour ouvrir un nouvel onglet
+        function openNewTab() {
+            window.open("nouvelle_page.html", "_blank"); // Ouvre la nouvelle page dans un onglet
+        }
+    </script>
+
+</body>
+</html>
