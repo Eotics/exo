@@ -129,8 +129,17 @@
 
     <script>
         async function fetchAIResponse(question) {
-            const apiUrl = 'https://api.openai.com/v1/chat/completions'; // URL de l'API d'OpenAI
-            const apiKey = 'YOUR_API_KEY'; // Remplacez par votre clé API
+            curl https://api.openai.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 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" \
+  -d '{
+    "model": "gpt-4o-mini",
+    "store": true,
+    "messages": [
+      {"role": "user", "content": "write a haiku about ai"}
+    ]
+  }'
+
 
             try {
                 const response = await fetch(apiUrl, {
