@@ -1,23 +1,33 @@
-// Définir les réponses du chatbot
+// Définir les réponses du chatbot basées sur des mots-clés
 var responses = {
-    "Bonjour": "Bonjour ! Comment puis-je vous aider ?",
-    "Salut": "Salut ! Comment puis-je vous aider ?",
-    "Comment ça va ?": "Je vais bien, merci ! Et vous ?",
-    "Au revoir": "Au revoir ! Passez une bonne journée.",
+    "bonjour|salut|hello": "Bonjour ! Comment puis-je vous aider ?",
+    "comment.*va.*?": "Je vais bien, merci ! Et vous ?",
+    "au revoir|bye|à bientôt": "Au revoir ! Passez une bonne journée.",
     "default": "Je ne comprends pas. Pouvez-vous reformuler ?"
 };
 
 // Fonction pour envoyer un message
 function sendMessage() {
-    var userInput = document.getElementById('userInput').value;
+    var userInput = document.getElementById('userInput').value.toLowerCase();
     document.getElementById('userInput').value = '';
 
     // Ajouter le message de l'utilisateur au chat
     addMessage(userInput, 'user');
 
     // Répondre au message de l'utilisateur
-    var response = responses[userInput] || responses["default"];
+    var response = getResponse(userInput);
     addMessage(response, 'bot');
+}
+
+// Fonction pour obtenir la réponse basée sur les mots-clés
+function getResponse(userInput) {
+    for (var key in responses) {
+        var regex = new RegExp(key, 'i');
+        if (regex.test(userInput)) {
+            return responses[key];
+        }
+    }
+    return responses["default"];
 }
 
 // Fonction pour ajouter un message au chat
