@@ -24,8 +24,12 @@
         </div>
     </main>
 
-    <div class="textarea-container">
-        <textarea class="writing-area" id="writingArea" placeholder="Posez une question ici..." onkeypress="checkEnter(event)"></textarea>
+    <div class="chat-container">
+        <div class="chat-box" id="chatBox"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Posez une question ici..." onkeypress="checkEnter(event)">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
     </div>
 
     <!-- Bouton pour ouvrir un nouvel onglet avec une page spécifique -->
