@@ -55,3 +55,4 @@ function checkEnter(event) {
 function openNewTab() {
     window.open('https://www.example.com', '_blank');
 }
+
