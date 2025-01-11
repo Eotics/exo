@@ -1,7 +1,7 @@
 // Définir les réponses du chatbot basées sur des mots-clés
 var responses = {
     "bonjour|salut|hello|hey": "Bonjour ! Comment puis-je vous aider ?",
-    "comment.*va.*?|ca.*va:"Je vais bien, merci ! Et vous ?",
+    "comment.*va.*?|ca va": "Je vais bien, merci ! Et vous ?",
     "au revoir|bye|à bientôt|à plus": "Au revoir ! Passez une bonne journée.",
     "merci|thank you|thanks": "De rien ! Si vous avez d'autres questions, n'hésitez pas.",
     "qui.*es.*tu.*?": "Je suis un chatbot conçu pour répondre à vos questions.",
