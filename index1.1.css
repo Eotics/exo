@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-image: url('moi.jpg');
     background-size: cover;
-    color: #6441A5; /* Couleur violet du logo Twitch */
+    color: #b9a3e3; /* Couleur violet du logo Twitch */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -32,15 +32,15 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     text-align: center;
-    color: #6441A5; /* Couleur violet du logo Twitch */
+    color: #b9a3e3; /* Couleur violet du logo Twitch */
 }
 
 h1, h2 {
-    color: #6441A5; /* Couleur violet du logo Twitch */
+    color: #b9a3e3; /* Couleur violet du logo Twitch */
 }
 
 p {
-    color: #6441A5; /* Couleur violet du logo Twitch */
+    color: #b9a3e3; /* Couleur violet du logo Twitch */
     margin-bottom: 20px;
 }
 
