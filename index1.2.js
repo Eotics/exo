@@ -1,12 +1,12 @@
 // Définir les réponses du chatbot basées sur des mots-clés
 var responses = {
-    "bonjour|salut|hello|hey": "Bonjour ! Comment puis-je vous aider ?",
-    "comment.*va.*?|ça.*va|ca.*va": "Je vais bien, merci ! Et vous ?",
-    "au revoir|bye|à bientôt|à plus": "Au revoir ! Passez une bonne journée.",
-    "merci|thank you|thanks": "De rien ! Si vous avez d'autres questions, n'hésitez pas.",
-    "qui.*es.*tu.*?": "Je suis un chatbot conçu pour répondre à vos questions.",
-    "quelle.*heure.*?": "Je ne peux pas vous donner l'heure actuelle, mais vous pouvez vérifier sur votre appareil.",
-    "default": "Je ne comprends pas. Pouvez-vous reformuler ?"
+    "bonjour|salut|hello|hey": "(Exotic : ) Bonjour ! Comment puis-je vous aider ?",
+    "comment.*va.*?|ça.*va|ca.*va": "(Exotic : ) Je vais bien, merci ! Et vous ?",
+    "au revoir|bye|à bientôt|à plus": "(Exotic : ) Au revoir ! Passez une bonne journée.",
+    "merci|thank you|thanks": "(Exotic : ) De rien ! Si vous avez d'autres questions, n'hésitez pas.",
+    "qui.*es.*tu.*?": "(Exotic : ) Je suis un chatbot conçu pour répondre à vos questions.",
+    "quelle.*heure.*?": "(Exotic : ) Je ne peux pas vous donner l'heure actuelle, mais vous pouvez vérifier sur votre appareil.",
+    "default": "(Exotic : ) Je ne comprends pas. Pouvez-vous reformuler ?"
 };
 
 // Fonction pour envoyer un message
@@ -55,3 +55,4 @@ function checkEnter(event) {
 function openNewTab() {
     window.open('https://www.example.com', '_blank');
 }
+
