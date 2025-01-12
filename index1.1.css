@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-image: url('moi.jpg');
     background-size: cover;
-    color: #6441A5; /* Couleur violet spécifique */
+    color: #3DC658; /* Couleur spécifique */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -32,15 +32,15 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     text-align: center;
-    color: #6441A5; /* Couleur violet spécifique */
+    color: #3DC658; /* Couleur spécifique */
 }
 
 h1, h2 {
-    color: #6441A5; /* Couleur violet spécifique */
+    color: #3DC658; /* Couleur spécifique */
 }
 
 p {
-    color: #6441A5; /* Couleur violet spécifique */
+    color: #3DC658; /* Couleur spécifique */
     margin-bottom: 20px;
 }
 
