@@ -65,6 +65,7 @@ p {
     justify-content: space-between;
     position: relative;
     bottom: 0;
+    height: calc(100vh - 300px); /* Ajustez cette valeur selon la hauteur de votre contenu */
 }
 
 .chat-box {
