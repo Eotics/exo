@@ -63,6 +63,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
 }
 
 .chat-box {
@@ -136,4 +137,3 @@ p {
 .new-window-button:hover {
     background-color: #1e4a82;
 }
-
