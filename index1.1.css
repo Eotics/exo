@@ -36,11 +36,11 @@ main {
 }
 
 h1, h2 {
-    color: #410966;
+    color: #6441A5; /* Couleur violet du logo Twitch */
 }
 
 p {
-    color: #410966;
+    color: #6441A5; /* Couleur violet du logo Twitch */
     margin-bottom: 20px;
 }
 
