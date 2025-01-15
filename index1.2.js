@@ -17,7 +17,6 @@ function sendMessage() {
     addMessage(response, 'bot');
 }
 
-// Fonction pour obtenir la réponse basée sur les mots-clés
 function getResponse(userInput) {
     for (var key in responses) {
         var regex = new RegExp(key, 'i');
@@ -28,7 +27,6 @@ function getResponse(userInput) {
     return responses["default"];
 }
 
-// Fonction pour ajouter un message au chat
 function addMessage(message, sender) {
     var chatBox = document.getElementById('chatBox');
     var messageElement = document.createElement('div');
@@ -38,7 +36,6 @@ function addMessage(message, sender) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Fonction pour vérifier si la touche Entrée est pressée
 function checkEnter(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -46,7 +43,6 @@ function checkEnter(event) {
     }
 }
 
-// Fonction pour ouvrir un nouvel onglet
 function openNewTab() {
     window.open('https://www.example.com', '_blank');
 }
