@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-image: url('moi.jpg');
     background-size: cover;
-    color: #3DC658; /* Couleur spécifique */
+    color: #3DC658; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -32,15 +32,15 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     text-align: center;
-    color: #3DC658; /* Couleur spécifique */
+    color: #3DC658; 
 }
 
 h1, h2 {
-    color: #3DC658; /* Couleur spécifique */
+    color: #3DC658; 
 }
 
 p {
-    color: #3DC658; /* Couleur spécifique */
+    color: #3DC658; 
     margin-bottom: 20px;
 }
 
@@ -65,7 +65,7 @@ p {
     justify-content: space-between;
     position: relative;
     bottom: 0;
-    height: calc(100vh - 500px); /* Ajustez cette valeur selon la hauteur de votre contenu */
+    height: calc(100vh - 500px); 
 }
 
 .chat-box {
