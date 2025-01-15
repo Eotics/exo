@@ -1,4 +1,3 @@
-// Définir les réponses du chatbot basées sur des mots-clés
 var responses = {
     "bonjour|salut|hello|hey": "Exotic : Bonjour ! Comment puis-je vous aider ?",
     "comment.*va.*?|ça.*va|ca.*va": "Exotic : Je vais bien, merci ! Et vous ?",
@@ -9,15 +8,11 @@ var responses = {
     "default": "Exotic : Je ne comprends pas. Pouvez-vous reformuler ?"
 };
 
-// Fonction pour envoyer un message
 function sendMessage() {
     var userInput = document.getElementById('userInput').value.toLowerCase();
     document.getElementById('userInput').value = '';
-
-    // Ajouter le message de l'utilisateur au chat
     addMessage(userInput, 'user');
 
-    // Répondre au message de l'utilisateur
     var response = getResponse(userInput);
     addMessage(response, 'bot');
 }
