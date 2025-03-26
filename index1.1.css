@@ -1,157 +1,5 @@
-header {
-    background-color: #27599b;
-    color: #fff;
-    text-align: left;
-    padding: 10px;
-    position: relative;
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,200&display=swap');
 
-.logo-new {
-    width: 80px;
-    height: auto;
-    position: absolute;
-    top: 10px; 
-    left: 10px;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('moi.jpg');
-    background-size: cover;
-    color: #3DC658; 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header, footer {
-    background-color: #27599b;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.content-container {
-    background-color: #000000;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    text-align: center;
-    color: #3DC658; 
-}
-
-h1, h2 {
-    color: #3DC658; 
-}
-
-p {
-    color: #3DC658; 
-    margin-bottom: 20px;
-}
-
-.logos-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-.logo {
-    width: 80px;
-    height: auto;
-    display: block;
-}
-
-.chat-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    bottom: 0;
-    height: calc(100vh - 500px); 
-}
-
-.chat-box {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.chat-input {
-    display: flex;
-    border-top: 1px solid #ccc;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-}
-
-.chat-input button {
-    padding: 10px;
-    background-color: #27599b;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.chat-input button:hover {
-    background-color: #1e4a82;
-}
-
-.message {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    max-width: 80%;
-}
-
-.message.user {
-    text-align: right;
-    background-color: #410966;
-    color: #fff;
-    margin-left: auto;
-}
-
-.message.bot {
-    text-align: left;
-    background-color: #27599b;
-    color: #fff;
-    margin-right: auto;
-}
-
-.button-container {
-    text-align: center;
-    margin: 20px;
-
-@link url(https://fonts.googleapis.com/css?family=Exo+2:200i);
-    
 :root {
   /* Base font size */
   font-size: 10px;   
@@ -168,21 +16,24 @@ body {
   align-items: center;  
   background: #000;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   font-size: 13rem;
-  font-weight: 200italic;
+  font-weight: 200;
   font-style: italic;
   color: #fff;
   padding: 4rem 6rem 5.5rem;
   border: 0.4rem solid #fff;
   border-radius: 2rem;
   text-transform: uppercase;
-  animation: flicker 1.5s infinite alternate;     
+  animation: flicker 1.5s infinite alternate;
+  will-change: text-shadow, box-shadow;
 }
 
-h1::will-change-moz-selection {
+h1::-moz-selection {
   background-color: var(--neon-border-color);
   color: var(--neon-text-color);
 }
@@ -198,9 +49,7 @@ h1:focus {
 
 /* Animate neon flicker */
 @keyframes flicker {
-    
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-      
         text-shadow:
             -0.2rem -0.2rem 1rem #fff,
             0.2rem 0.2rem 1rem #fff,
