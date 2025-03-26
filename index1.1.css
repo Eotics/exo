@@ -149,6 +149,9 @@ p {
 .button-container {
     text-align: center;
     margin: 20px;
+
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+    
 :root {
   /* Base font size */
   font-size: 10px;   
