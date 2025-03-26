@@ -150,7 +150,7 @@ p {
     text-align: center;
     margin: 20px;
 
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@link url(https://fonts.googleapis.com/css?family=Exo+2:200i);
     
 :root {
   /* Base font size */
@@ -172,7 +172,7 @@ body {
 
 h1 {
   font-size: 13rem;
-  font-weight: 200;
+  font-weight: 200italic;
   font-style: italic;
   color: #fff;
   padding: 4rem 6rem 5.5rem;
@@ -182,7 +182,7 @@ h1 {
   animation: flicker 1.5s infinite alternate;     
 }
 
-h1::-moz-selection {
+h1::will-change-moz-selection {
   background-color: var(--neon-border-color);
   color: var(--neon-text-color);
 }
