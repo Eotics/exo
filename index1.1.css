@@ -12,11 +12,37 @@ body {
     min-height: 100vh;
 }
 
-header, footer {
-    background-color: #3c7bce;
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.logo {
+    width: 50px; /* Réduire la taille du logo */
+    height: auto;
+}
+
+h1 {
+    font-size: 2.5rem; /* Réduire la taille du texte */
+    font-weight: 200;
+    font-style: italic;
     color: #fff;
-    text-align: center;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 main {
@@ -24,7 +50,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 70px 20px 20px; /* Décaler le contenu pour compenser l'entête */
 }
 
 .content-container {
@@ -111,14 +137,14 @@ main {
 }
 
 h1 {
-    font-size: 13rem;
+    font-size: 2.5rem; /* Taille réduite du titre */
     font-weight: 200;
     font-style: italic;
     color: #fff;
-    padding: 4rem 6rem 5.5rem;
-    border: 0.4rem solid #fff;
-    border-radius: 2rem;
+    padding: 0;
+    margin: 0;
     text-transform: uppercase;
+    letter-spacing: 2px;
     animation: flicker 1.5s infinite alternate;
 }
 
@@ -169,3 +195,4 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
