@@ -8,15 +8,16 @@
     <link rel="icon" type="image/jpeg" href="logo.png">
 </head>
 <body>
-
     <header>
-        <img src="logo.png" alt="Nouvelle Image" class="logo-new"> 
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo-new">
+        </div>
         <h1>Mon Site Web</h1>
     </header>
 
     <main>
         <div class="content-container">
-            <section>
+            <section class="introduction">
                 <h2>Bienvenue sur mon site Slasher pour vous servir !</h2>
                 <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
                 <div class="logos-container">
@@ -34,15 +35,19 @@
         </div>
     </main>
 
-    <!-- Nouveau bouton "open" en bas -->
-    <div class="button-container">
-        <h1 contenteditable spellcheck="false">open</h1>
+    <!-- Zone de chat -->
+    <div class="chat-container">
+        <div class="chat-box" id="chatBox"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Posez une question ici..." onkeypress="checkEnter(event)">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
     </div>
 
     <footer>
         <p>&copy; Mon site web officiel Slasher Eotics</p>
     </footer>
 
-    <script src="index1.2.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
