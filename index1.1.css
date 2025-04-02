@@ -1,15 +1,10 @@
-/* Ajouter un effet néon pour le bouton */
-::root {
-  font-size: 10px;
-  --neon-text-color: #f40;
-  --neon-border-color: #08f;
-}
-
+/* Style global */
 body {
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('moi.jpg');
+    background-position: center;
     background-size: cover;
     color: #fff;
     display: flex;
@@ -18,23 +13,10 @@ body {
 }
 
 header, footer {
-    background-color: #27599b;
+    background-color: #3c7bce;
     color: #fff;
     text-align: center;
     padding: 10px;
-}
-
-header {
-    position: relative;
-    text-align: left;
-}
-
-.logo-new {
-    width: 80px;
-    height: auto;
-    position: absolute;
-    top: 10px;
-    left: 10px;
 }
 
 main {
@@ -52,16 +34,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     text-align: center;
-    color: #3DC658; 
-}
-
-h1, h2 {
     color: #3DC658;
-}
-
-p {
-    color: #3DC658;
-    margin-bottom: 20px;
 }
 
 .logos-container {
@@ -77,29 +50,81 @@ p {
     display: block;
 }
 
-/* Ajout du bouton open en bas */
-.button-container {
-    text-align: center;
-    margin-top: auto;
-    padding-bottom: 20px; /* Laisser un peu d'espace avant le bas de la page */
+/* Zone de chat avec un fond noir semi-transparent */
+.chat-container {
+    width: 90%; /* Prendre 90% de la largeur du conteneur */
+    max-width: 1000px; /* Limiter à 1000px pour les grandes résolutions */
+    margin: 20px auto; /* Centrer horizontalement */
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 60vh; /* Prendre 60% de la hauteur de la fenêtre */
+}
+
+/* Zone du chat (messages) */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Zone de saisie du chat */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.chat-input button {
+    padding: 10px;
+    background-color: #27599b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #1e4a82;
+}
+
+/* Button avec effet neon */
+::root {
+    font-size: 10px;
+    --neon-text-color: #f40;
+    --neon-border-color: #08f;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 13rem;
     font-weight: 200;
     font-style: italic;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 4rem 6rem 5.5rem;
     border: 0.4rem solid #fff;
     border-radius: 2rem;
     text-transform: uppercase;
     animation: flicker 1.5s infinite alternate;
-    cursor: pointer; /* Ajouter un effet de curseur pointer */
 }
 
-h1:hover {
-    color: var(--neon-text-color); /* Changer la couleur au survol */
-    border-color: var(--neon-border-color);
+h1::-moz-selection {
+    background-color: var(--neon-border-color);
+    color: var(--neon-text-color);
 }
 
 h1::selection {
@@ -107,7 +132,10 @@ h1::selection {
     color: var(--neon-text-color);
 }
 
-/* Animation néon */
+h1:focus {
+    outline: none;
+}
+
 @keyframes flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         text-shadow:
@@ -118,18 +146,26 @@ h1::selection {
             0 0 6rem var(--neon-text-color),
             0 0 8rem var(--neon-text-color),
             0 0 10rem var(--neon-text-color);
-        
+
         box-shadow:
             0 0 .5rem #fff,
             inset 0 0 .5rem #fff,
             0 0 2rem var(--neon-border-color),
             inset 0 0 2rem var(--neon-border-color),
             0 0 4rem var(--neon-border-color),
-            inset 0 0 4rem var(--neon-border-color);        
+            inset 0 0 4rem var(--neon-border-color);
     }
-    
-    20%, 24%, 55% {        
+
+    20%, 24%, 55% {
         text-shadow: none;
         box-shadow: none;
-    }    
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #27599b;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
 }
