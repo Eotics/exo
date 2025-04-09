@@ -8,17 +8,16 @@
     <link rel="icon" type="image/jpeg" href="logo.png">
 </head>
 <body>
+
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
-        </div>
-        <h1>Exotic.AI</h1>
+        <img src="logo.png" alt="Logo Exotic.AI" class="logo-new"> 
+        <h1 class="site-title">Exotic.AI</h1>
     </header>
 
     <main>
         <div class="content-container">
-            <section class="introduction">
-                <h2>Bienvenue sur mon site Exotic pour vous servir !</h2>
+            <section>
+                <h2>Bienvenue sur Exotic.AI, votre assistant personnel !</h2>
                 <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
                 <div class="logos-container">
                     <a class="twitch-link" href="https://www.twitch.tv/seb07_93">
@@ -33,21 +32,25 @@
                 </div>
             </section>
         </div>
+
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Posez une question ici..." onkeypress="checkEnter(event)">
+                <button onclick="sendMessage()">Envoyer</button>
+            </div>
+        </div>
     </main>
 
-    <!-- Zone de chat -->
-    <div class="chat-container">
-        <div class="chat-box" id="chatBox"></div>
-        <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Posez une question ici..." onkeypress="checkEnter(event)">
-            <button onclick="sendMessage()">Envoyer</button>
-        </div>
+    <div class="neon-button-container">
+        <button class="neon-button" onclick="openNewTab()">Nouvelle discussion</button>
     </div>
 
     <footer>
-        <p>&copy; Mon site web officiel Slasher Eotics</p>
+        <p>&copy; Site officiel Exotic.AI</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="index1.2.js"></script>
 </body>
 </html>
+
