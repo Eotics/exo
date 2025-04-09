@@ -1,4 +1,3 @@
-/* index1.1.css */
 :root {
   font-size: 10px;
   --neon-text-color: #f40;
@@ -7,124 +6,124 @@
 
 body {
   font-family: 'Exo 2', sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
-  background: url("background.jpg") no-repeat center center fixed;
-  background-size: cover;
   color: white;
-  min-height: 100vh;
-  overflow: hidden;
 }
 
 header {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  height: 80px;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-header img {
+.logo {
+  width: 60px;
   height: 60px;
-  margin-right: 15px;
+  margin-right: 1rem;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
+h1 {
+  font-size: 3rem;
+  font-weight: 200;
   font-style: italic;
-  margin: 0;
-  color: white;
+  color: #fff;
+  animation: flicker 1.5s infinite alternate;
 }
 
-.container {
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      -0.2rem -0.2rem 1rem #fff,
+      0.2rem 0.2rem 1rem #fff,
+      0 0 2rem var(--neon-text-color),
+      0 0 4rem var(--neon-text-color),
+      0 0 6rem var(--neon-text-color),
+      0 0 8rem var(--neon-text-color),
+      0 0 10rem var(--neon-text-color);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding: 2rem;
 }
 
-.welcome-box {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-  max-width: 600px;
-  color: #00ff00;
-}
-
-.welcome-box p {
-  margin-top: 10px;
-  color: white;
-}
-
-.logo-links img {
-  width: 50px;
-  margin: 0 5px;
-}
-
-.chatbox-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.presentation {
   background: rgba(0, 0, 0, 0.7);
-  padding: 10px 20px;
-  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px;
 }
 
-#chatBox {
-  max-height: 200px;
+.liens a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #3DC658;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
   overflow-y: auto;
-  margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #3DC658;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-.message {
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-.message.user {
-  background-color: #333;
-  text-align: right;
-}
-
-.message.bot {
-  background-color: #555;
-  text-align: left;
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
 }
 
 input[type="text"] {
-  width: 80%;
-  padding: 8px;
+  flex: 1;
+  padding: 0.7rem;
   border: none;
-  border-radius: 5px;
-  margin-right: 10px;
+  border-radius: 1rem 0 0 1rem;
+  outline: none;
 }
 
 button {
-  background-color: #27599b;
-  border: none;
+  padding: 0.7rem 1.5rem;
+  background: #27599b;
   color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #3DC658;
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2rem;
+.new-chat {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #3DC658;
   color: white;
-  padding-bottom: 5px;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
