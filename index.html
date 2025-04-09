@@ -5,52 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exotic.AI</title>
     <link rel="stylesheet" href="index1.1.css">
-    <link rel="icon" type="image/jpeg" href="logo.png">
 </head>
 <body>
-
     <header>
-        <img src="logo.png" alt="Logo Exotic.AI" class="logo-new"> 
-        <h1 class="site-title">Exotic.AI</h1>
+        <img src="logo.png" alt="Logo Exotic" id="logo">
+        <h1 contenteditable spellcheck="false">EXOTIC.AI</h1>
     </header>
 
-    <main>
-        <div class="content-container">
-            <section>
-                <h2>Bienvenue sur Exotic.AI, votre assistant personnel !</h2>
-                <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
-                <div class="logos-container">
-                    <a class="twitch-link" href="https://www.twitch.tv/seb07_93">
-                        <img src="twitch_logo.png" alt="Logo Twitch" class="logo">
-                    </a>
-                    <a class="youtube-link" href="https://www.youtube.com/channel/UCKV4R0cSeqrMuVFtqid2xWA">
-                        <img src="youtube_logo.png" alt="Logo YouTube" class="logo">
-                    </a>
-                    <a class="paypal-link" href="https://paypal.me/SlasherEotics?country.x=FR&locale.x=fr_FR">
-                        <img src="paypal_logo.png" alt="Logo PayPal" class="logo">
-                    </a>
-                </div>
-            </section>
+    <div id="welcomeBox">
+        <p>Bienvenue sur <strong>Exotic.AI</strong>, votre assistant personnel !</p>
+        <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
+        <div class="icons">
+            <a href="#"><img src="twitch-icon.png" alt="Twitch"></a>
+            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="paypal-icon.png" alt="Paypal"></a>
         </div>
-
-        <div class="chat-container">
-            <div class="chat-box" id="chatBox"></div>
-            <div class="chat-input">
-                <input type="text" id="userInput" placeholder="Posez une question ici..." onkeypress="checkEnter(event)">
-                <button onclick="sendMessage()">Envoyer</button>
-            </div>
-        </div>
-    </main>
-
-    <div class="neon-button-container">
-        <button class="neon-button" onclick="openNewTab()">Nouvelle discussion</button>
     </div>
 
+    <div id="chatContainer">
+        <div id="chatBox"></div>
+        <form id="chatForm" onsubmit="sendMessage(); return false;">
+            <input type="text" id="userInput" placeholder="Posez une question ici..." onkeydown="checkEnter(event)">
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+    <button id="newChat" onclick="resetChat()">Nouvelle discussion</button>
+
     <footer>
-        <p>&copy; Site officiel Exotic.AI</p>
+        <p>© Mon site web officiel Exotic.AI</p>
     </footer>
 
-    <script src="index1.2.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>
 
