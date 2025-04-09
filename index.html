@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exotic.AI</title>
-    <link rel="stylesheet" href="index1.1.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exotic.AI</title>
+  <link rel="stylesheet" href="index1.1.css" />
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Exotic" id="logo">
-        <h1 contenteditable spellcheck="false">EXOTIC.AI</h1>
-    </header>
+  <header>
+    <img src="logo.png" alt="Logo Exotic.AI" class="logo" />
+    <h1>EXOTIC.AI</h1>
+  </header>
 
-    <div id="welcomeBox">
-        <p>Bienvenue sur <strong>Exotic.AI</strong>, votre assistant personnel !</p>
-        <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal:</p>
-        <div class="icons">
-            <a href="#"><img src="twitch-icon.png" alt="Twitch"></a>
-            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
-            <a href="#"><img src="paypal-icon.png" alt="Paypal"></a>
-        </div>
+  <main>
+    <div class="presentation">
+      <p>Bienvenue sur <strong>Exotic.AI</strong>, votre assistant personnel !</p>
+      <p>Cliquez ici pour accéder à mon Twitch, YouTube et Paypal :</p>
+      <div class="liens">
+        <a href="#">Twitch</a>
+        <a href="#">YouTube</a>
+        <a href="#">PayPal</a>
+      </div>
     </div>
 
-    <div id="chatContainer">
-        <div id="chatBox"></div>
-        <form id="chatForm" onsubmit="sendMessage(); return false;">
-            <input type="text" id="userInput" placeholder="Posez une question ici..." onkeydown="checkEnter(event)">
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
+    <div id="chatBox" class="chat-box"></div>
+    <form onsubmit="event.preventDefault(); sendMessage();">
+      <input type="text" id="userInput" placeholder="Posez une question ici..." />
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
 
-    <button id="newChat" onclick="resetChat()">Nouvelle discussion</button>
+  <footer>© Mon site web officiel Exotic.AI</footer>
 
-    <footer>
-        <p>© Mon site web officiel Exotic.AI</p>
-    </footer>
-
-    <script src="chat.js"></script>
+  <button class="new-chat" onclick="location.reload()">Nouvelle discussion</button>
+  <script src="index1.2.js"></script>
 </body>
 </html>
 
